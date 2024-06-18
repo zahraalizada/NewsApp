@@ -9,4 +9,7 @@ import UIKit
 
 class LoginViewModel {
     
+    var user: User?
+    let manager = UserFileManagerHelper()
+    
 }

@@ -9,8 +9,12 @@ import UIKit
 
 class HomeController: UIViewController {
 
+    @IBOutlet weak var topCollectionView: UICollectionView!
+    @IBOutlet weak var bottomCollectionView: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Home"
 
         
     }

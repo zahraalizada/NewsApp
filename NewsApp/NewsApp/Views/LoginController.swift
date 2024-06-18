@@ -9,11 +9,72 @@ import UIKit
 
 class LoginController: UIViewController {
 
+    @IBOutlet weak var emailField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var errorLabel: UILabel!
+    
+    var loginVM = LoginViewModel()
+    var registerVM = RegisterViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
+        errorLabel.isHidden = true
     }
-   
-
+    
+    @IBAction func signInTappedButton(_ sender: Any) {
+        
+        let email = emailField.text ?? ""
+        let password = passwordField.text ?? ""
+        
+        if emailField.text == "",
+           passwordField.text == "" {
+            errorLabel.text = "Zəhmət olmasa bütün boş xanaları doldurun."
+            errorLabel.isHidden = false
+        } else {
+            if loginVM.manager.isValidEmail(email: emailField.text ?? ""){
+                
+                loginVM.manager.getUsers { users in
+                    if users.contains(where:  {$0.email == email && $0.password == password}) {
+                        UserDefaults.standard.setValue(email, forKey: "email")
+                        DispatchQueue.main.async {
+                            if let sceneDelegate = self.view.window?.windowScene?.delegate as? SceneDelegate {
+                                sceneDelegate.setTabBarAsRoot()
+                            }
+                        }
+                    } else {
+                        DispatchQueue.main.async {
+                            self.errorLabel.isHidden = false
+                            self.errorLabel.text = "Daxil etdiyiniz e-mail və ya şifrə yanlışdır."
+                        }
+                    }
+                }
+            } else {
+                DispatchQueue.main.async {
+                    self.errorLabel.isHidden = false
+                    self.errorLabel.text = "Daxil etdiyiniz e-mail formatı yanlışdır."
+                }
+            }
+            
+           
+        }
+        
+       
+    }
+    
+    @IBAction func registerTappedButton(_ sender: Any) {
+        let controller = storyboard?.instantiateViewController(withIdentifier: "\(RegisterController.self)") as! RegisterController
+        controller.registerVM.userCallback = { user in
+            self.loginVM.user = User(fullname: user.fullname,
+                                        email: user.email,
+                                        password: user.password)
+       
+            self.emailField.text = user.email
+            self.passwordField.text = user.password
+            
+        }
+        navigationController?.show(controller, sender: nil)
+        errorLabel.isHidden = true
+    }
+    
+    
 }

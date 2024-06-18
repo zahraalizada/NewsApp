@@ -8,5 +8,6 @@
 import UIKit
 
 class ProfileViewModel {
-    
+    var user: User?
+    let manager = UserFileManagerHelper()
 }

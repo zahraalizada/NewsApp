@@ -9,4 +9,9 @@ import UIKit
 
 class RegisterViewModel {
     
+    var manager = UserFileManagerHelper()
+    var userCallback: ((User) -> Void)?
+    var users = [User]()
+    
+    
 }
