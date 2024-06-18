@@ -16,6 +16,7 @@ extension CategoryList {
         return NSFetchRequest<CategoryList>(entityName: "CategoryList")
     }
 
+    @NSManaged public var name: String?
 
 }
 
