@@ -12,25 +12,39 @@ class SearchController: UIViewController {
     @IBOutlet weak var searchCollectionView: UICollectionView!
     @IBOutlet weak var searchField: UITextField!
     
+    var posts = [Post]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Search"
         
         searchCollectionView.register(UINib(nibName: "PostCell", bundle: nil), forCellWithReuseIdentifier: "PostCell")
         searchCollectionView.register(UINib(nibName: "HeaderView", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "HeaderView")
+        
+        parsePostsFile()
     }
     
     @IBAction func searchTappedButton(_ sender: Any) {
         //
     }
     
-    
+    func parsePostsFile() {
+        if let file = Bundle.main.url(forResource: "Posts", withExtension: "json") {
+            do {
+                let data = try Data(contentsOf: file)
+                posts = try JSONDecoder().decode([Post].self, from: data)
+                print(posts)
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+    }
     
 }
 
 extension SearchController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        5
+        posts.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
