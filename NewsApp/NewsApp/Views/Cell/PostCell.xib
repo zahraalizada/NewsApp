@@ -20,19 +20,47 @@
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yAy-oq-36X">
                         <rect key="frame" x="0.0" y="0.0" width="310" height="149"/>
                     </imageView>
-                    <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yDf-YN-LhQ">
-                        <rect key="frame" x="0.0" y="89" width="310" height="60"/>
+                    <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yDf-YN-LhQ">
+                        <rect key="frame" x="0.0" y="93" width="310" height="56"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="60" id="rZo-7G-5gW"/>
+                            <constraint firstAttribute="height" constant="56" id="rZo-7G-5gW"/>
                         </constraints>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Dy-Q1-Tmt">
-                        <rect key="frame" x="20" y="108.66666666666667" width="270" height="20.333333333333329"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="h8V-Pb-0qM">
+                        <rect key="frame" x="20" y="100.33333333333333" width="270" height="40.666666666666671"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="8Xk-jc-gr5">
+                                <rect key="frame" x="0.0" y="0.0" width="218" height="40.666666666666664"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23 September 1965" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x2a-3A-kCl">
+                                        <rect key="frame" x="0.0" y="0.0" width="218" height="20.333333333333332"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="11"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Dy-Q1-Tmt">
+                                        <rect key="frame" x="0.0" y="20.333333333333343" width="218" height="20.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GCT-Xp-ljO">
+                                <rect key="frame" x="238" y="4.3333333333333428" width="32" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="32" id="mSp-6e-pR3"/>
+                                    <constraint firstAttribute="height" constant="32" id="wfB-MC-CUR"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system"/>
+                                <connections>
+                                    <action selector="favoriteTappedButon:" destination="gTV-IL-0wX" eventType="touchUpInside" id="2Fn-E1-XKJ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                    </stackView>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
@@ -41,16 +69,18 @@
                 <constraint firstAttribute="bottom" secondItem="yAy-oq-36X" secondAttribute="bottom" id="6NA-PJ-iKU"/>
                 <constraint firstAttribute="trailing" secondItem="yDf-YN-LhQ" secondAttribute="trailing" id="71L-Vk-Ccb"/>
                 <constraint firstAttribute="bottom" secondItem="yDf-YN-LhQ" secondAttribute="bottom" id="92g-X2-WtF"/>
-                <constraint firstAttribute="bottom" secondItem="1Dy-Q1-Tmt" secondAttribute="bottom" constant="20" id="AlJ-jw-IvX"/>
+                <constraint firstAttribute="trailing" secondItem="h8V-Pb-0qM" secondAttribute="trailing" constant="20" id="DhN-dy-hMl"/>
                 <constraint firstItem="yDf-YN-LhQ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="JlZ-fQ-Yy8"/>
                 <constraint firstItem="yAy-oq-36X" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="ZQZ-6k-KRX"/>
                 <constraint firstAttribute="trailing" secondItem="yAy-oq-36X" secondAttribute="trailing" id="hrO-MV-XIA"/>
+                <constraint firstAttribute="bottom" secondItem="h8V-Pb-0qM" secondAttribute="bottom" constant="8" id="ohD-CA-9Xe"/>
                 <constraint firstItem="yAy-oq-36X" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="qvu-wv-ssG"/>
-                <constraint firstAttribute="trailing" secondItem="1Dy-Q1-Tmt" secondAttribute="trailing" constant="20" id="ts7-ra-zWL"/>
-                <constraint firstItem="1Dy-Q1-Tmt" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="vRg-6e-cSI"/>
+                <constraint firstItem="h8V-Pb-0qM" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="sqM-BM-jJY"/>
             </constraints>
             <size key="customSize" width="310" height="149"/>
             <connections>
+                <outlet property="dateLabel" destination="x2a-3A-kCl" id="IAn-EH-5wN"/>
+                <outlet property="favoriteButton" destination="GCT-Xp-ljO" id="TcQ-MB-35t"/>
                 <outlet property="postImage" destination="yAy-oq-36X" id="rK7-f0-c3V"/>
                 <outlet property="titleLabel" destination="1Dy-Q1-Tmt" id="gL2-5t-GOl"/>
             </connections>
@@ -58,6 +88,7 @@
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="heart" catalog="system" width="128" height="107"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -8,7 +8,7 @@
 import UIKit
 
 class LoginController: UIViewController {
-
+    
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var errorLabel: UILabel!
@@ -54,27 +54,19 @@ class LoginController: UIViewController {
                     self.errorLabel.text = "Daxil etdiyiniz e-mail formatı yanlışdır."
                 }
             }
-            
-           
         }
-        
-       
     }
     
     @IBAction func registerTappedButton(_ sender: Any) {
         let controller = storyboard?.instantiateViewController(withIdentifier: "\(RegisterController.self)") as! RegisterController
-        controller.registerVM.userCallback = { user in
-            self.loginVM.user = User(fullname: user.fullname,
-                                        email: user.email,
-                                        password: user.password)
-       
-            self.emailField.text = user.email
-            self.passwordField.text = user.password
-            
+        
+        controller.registerVM.userCallback = { [weak self] user in
+            self?.loginVM.user = user
+            self?.emailField.text = user.email
+            self?.passwordField.text = user.password
         }
+        
         navigationController?.show(controller, sender: nil)
         errorLabel.isHidden = true
     }
-    
-    
 }

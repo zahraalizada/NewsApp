@@ -46,6 +46,14 @@ class SearchController: UIViewController {
         searchCollectionView.reloadData()
     }
     
+    // CategoryName-e gore filter
+       func filterPosts(by categoryName: String) {
+           posts = postManager.parsePostsFile().filter { post in
+               return post.categoryName == categoryName
+           }
+           searchCollectionView.reloadData()
+       }
+    
 }
 
 extension SearchController: UICollectionViewDataSource {
@@ -56,7 +64,7 @@ extension SearchController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PostCell", for: indexPath) as! PostCell
         let post = posts[indexPath.item]
-        cell.configure(image: post.image ?? "", title: post.title ?? "")
+        cell.configure(image: post.image ?? "", title: post.title ?? "", date: post.date ?? "")
         return cell
     }
 }
@@ -72,6 +80,12 @@ extension SearchController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "HeaderView", for: indexPath) as! HeaderView
+        
+        // HeaderView-daki clsoure-i define et
+        header.onCategorySelected = { [weak self] category in
+            self?.filterPosts(by: category.name ?? "")
+        }
+        
         return header
     }
 }

@@ -8,7 +8,7 @@
 import Foundation
 
 struct Post: Codable {
-    let categoryId: Int?
+    let categoryName: String?
     let title: String?
     let content: String?
     let image: String?

@@ -1,6 +1,6 @@
 [
     {
-        "categoryId": 1,
+        "categoryName": "Tecnology",
         "title": "Technology Advances in 2024",
         "content": "The year 2024 has seen significant advancements in the field of technology. From AI breakthroughs to new gadgets, the tech world is buzzing with excitement.",
         "image": "post1",
@@ -9,8 +9,8 @@
         "isFavorite": false
     },
     {
-        "categoryId": 2,
-        "title": "Economic Outlook for the Next Quarter",
+        "categoryName": "Football",
+        "title": "Football Economic Outlook for the Next Quarter",
         "content": "Economists are predicting a mixed outlook for the next quarter, with potential growth in some sectors and challenges in others. Detailed analysis inside.",
         "image": "post2",
         "date": "2024-06-18",
@@ -18,7 +18,7 @@
         "isFavorite": false
     },
     {
-        "categoryId": 3,
+        "categoryName": "News",
         "title": "Health and Wellness Trends",
         "content": "The latest trends in health and wellness focus on holistic approaches to well-being, including mental health, fitness, and nutrition.",
         "image": "post3",

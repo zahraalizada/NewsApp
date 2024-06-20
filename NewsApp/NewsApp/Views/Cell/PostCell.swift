@@ -9,16 +9,22 @@ import UIKit
 
 class PostCell: UICollectionViewCell {
 
+    @IBOutlet weak var favoriteButton: UIButton!
     @IBOutlet weak private var postImage: UIImageView!
     @IBOutlet weak private var titleLabel: UILabel!
+    @IBOutlet weak private var dateLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
     }
     
-    func configure(image: String, title: String) {
+    @IBAction func favoriteTappedButon(_ sender: Any) {
+    }
+    
+    func configure(image: String, title: String, date: String) {
         postImage.image = UIImage(named: image)
         titleLabel.text = title
+        dateLabel.text = date
     }
 
 }

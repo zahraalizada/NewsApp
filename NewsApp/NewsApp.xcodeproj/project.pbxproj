@@ -29,6 +29,7 @@
 		1A31E8242C0B1BC000712199 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A31E8232C0B1BC000712199 /* User.swift */; };
 		1A31E8262C0B1BCD00712199 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A31E8252C0B1BCD00712199 /* Post.swift */; };
 		1A31E8282C0B1BDA00712199 /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A31E8272C0B1BDA00712199 /* Favorite.swift */; };
+		1A372A832C24C0B000B82C26 /* HeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A372A822C24C0B000B82C26 /* HeaderViewModel.swift */; };
 		1AB7298A2C144FF70059BE82 /* SliderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AB729892C144FF70059BE82 /* SliderCell.xib */; };
 		1AB7298B2C144FF70059BE82 /* SliderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB729882C144FF70059BE82 /* SliderCell.swift */; };
 		1AB7298E2C14502F0059BE82 /* PostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AB7298D2C14502F0059BE82 /* PostCell.xib */; };
@@ -72,6 +73,7 @@
 		1A31E8232C0B1BC000712199 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		1A31E8252C0B1BCD00712199 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		1A31E8272C0B1BDA00712199 /* Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
+		1A372A822C24C0B000B82C26 /* HeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderViewModel.swift; sourceTree = "<group>"; };
 		1AB729882C144FF70059BE82 /* SliderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderCell.swift; sourceTree = "<group>"; };
 		1AB729892C144FF70059BE82 /* SliderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SliderCell.xib; sourceTree = "<group>"; };
 		1AB7298C2C14502F0059BE82 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 				1A31E81A2C0B190400712199 /* FavoriteViewModel.swift */,
 				1A31E81C2C0B190B00712199 /* ProfileViewModel.swift */,
 				1A31E81E2C0B191400712199 /* PostDetailViewModel.swift */,
+				1A372A822C24C0B000B82C26 /* HeaderViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 				1A31E8222C0B1BBC00712199 /* Category.swift in Sources */,
 				1AF3A3B42C21F66500B9A5E9 /* CategoryCell.swift in Sources */,
 				1ACA12BD2C22C30A000262B3 /* PostManager.swift in Sources */,
+				1A372A832C24C0B000B82C26 /* HeaderViewModel.swift in Sources */,
 				1A31E8172C0B18F200712199 /* HomeViewModel.swift in Sources */,
 				1A31E8092C0B17D000712199 /* HomeController.swift in Sources */,
 				1A31E8242C0B1BC000712199 /* User.swift in Sources */,

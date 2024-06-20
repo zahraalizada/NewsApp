@@ -25,13 +25,21 @@ class UserFileManagerHelper {
     }
     
     func getUsers(complete: (([User]) -> Void)) {
-        if let data = try? Data(contentsOf: getFilePath()) {
-            do {
-                let user = try JSONDecoder().decode([User].self, from: data)
-                complete(user)
-            } catch {
-                print(error.localizedDescription)
+        let path = getFilePath()
+        if FileManager.default.fileExists(atPath: path.path) {
+            if let data = try? Data(contentsOf: path) {
+                do {
+                    let users = try JSONDecoder().decode([User].self, from: data)
+                    complete(users)
+                } catch {
+                    print(error.localizedDescription)
+                    complete([])
+                }
+            } else {
+                complete([])
             }
+        } else {
+            complete([])
         }
     }
     
@@ -40,5 +48,4 @@ class UserFileManagerHelper {
         let emailPredicate = NSPredicate(format: "SELF MATCHES %@", emailRegex)
         return emailPredicate.evaluate(with: email)
     }
-    
 }
