@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A16FAB02C26BED400CC8AB9 /* FavoriteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A16FAAF2C26BED400CC8AB9 /* FavoriteCell.xib */; };
+		1A16FAB12C26BED400CC8AB9 /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A16FAAE2C26BED400CC8AB9 /* FavoriteCell.swift */; };
 		1A31E7E92C0B109300712199 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A31E7E82C0B109300712199 /* AppDelegate.swift */; };
 		1A31E7EB2C0B109300712199 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A31E7EA2C0B109300712199 /* SceneDelegate.swift */; };
 		1A31E7F02C0B109300712199 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 1A31E7EF2C0B109300712199 /* Base */; };
@@ -49,6 +51,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A16FAAE2C26BED400CC8AB9 /* FavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
+		1A16FAAF2C26BED400CC8AB9 /* FavoriteCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteCell.xib; sourceTree = "<group>"; };
 		1A31E7E52C0B109300712199 /* NewsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A31E7E82C0B109300712199 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1A31E7EA2C0B109300712199 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -210,6 +214,8 @@
 				1AF3A3AD2C21F0F600B9A5E9 /* HeaderView.xib */,
 				1AF3A3B22C21F66500B9A5E9 /* CategoryCell.swift */,
 				1AF3A3B32C21F66500B9A5E9 /* CategoryCell.xib */,
+				1A16FAAE2C26BED400CC8AB9 /* FavoriteCell.swift */,
+				1A16FAAF2C26BED400CC8AB9 /* FavoriteCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -277,6 +283,7 @@
 				1AB7298E2C14502F0059BE82 /* PostCell.xib in Resources */,
 				1AB7298A2C144FF70059BE82 /* SliderCell.xib in Resources */,
 				1AF3A3962C21B02D00B9A5E9 /* Posts.json in Resources */,
+				1A16FAB02C26BED400CC8AB9 /* FavoriteCell.xib in Resources */,
 				1A31E7F02C0B109300712199 /* Base in Resources */,
 				1AF3A3AF2C21F0F600B9A5E9 /* HeaderView.xib in Resources */,
 				1AF3A3B52C21F66500B9A5E9 /* CategoryCell.xib in Resources */,
@@ -303,6 +310,7 @@
 				1A31E81B2C0B190400712199 /* FavoriteViewModel.swift in Sources */,
 				1A31E8052C0B17A800712199 /* RegisterController.swift in Sources */,
 				1A31E8112C0B180A00712199 /* PostDetailController.swift in Sources */,
+				1A16FAB12C26BED400CC8AB9 /* FavoriteCell.swift in Sources */,
 				1A31E81F2C0B191400712199 /* PostDetailViewModel.swift in Sources */,
 				1A31E81D2C0B190B00712199 /* ProfileViewModel.swift in Sources */,
 				1A31E8222C0B1BBC00712199 /* Category.swift in Sources */,

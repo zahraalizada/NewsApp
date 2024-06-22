@@ -8,7 +8,7 @@
 import UIKit
 
 class SearchController: UIViewController {
-
+    
     @IBOutlet weak var searchCollectionView: UICollectionView!
     @IBOutlet weak var searchField: UITextField!
     
@@ -23,37 +23,15 @@ class SearchController: UIViewController {
         searchCollectionView.register(UINib(nibName: "HeaderView", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "HeaderView")
         
         posts = postManager.parsePostsFile()
-        
     }
     
     @IBAction func searchFieldTapped(_ sender: Any) {
-        filterPosts(text: searchField.text ?? "")
+        posts = postManager.filterPostsWithSearch(text: searchField.text ?? "")
+        searchCollectionView.reloadData()
     }
     
     @IBAction func searchTappedButton(_ sender: Any) {
     }
-    
-    func filterPosts(text: String) {
-        if text.isEmpty {
-            // search-de text olmadiqda butun postlari goster
-            posts = postManager.parsePostsFile()
-        } else {
-            //search-de text olduqda title ile filter et
-            posts = postManager.parsePostsFile().filter { post in
-                return post.title?.lowercased().contains(text.lowercased()) ?? false
-            }
-        }
-        searchCollectionView.reloadData()
-    }
-    
-    // CategoryName-e gore filter
-       func filterPosts(by categoryName: String) {
-           posts = postManager.parsePostsFile().filter { post in
-               return post.categoryName == categoryName
-           }
-           searchCollectionView.reloadData()
-       }
-    
 }
 
 extension SearchController: UICollectionViewDataSource {
@@ -63,10 +41,30 @@ extension SearchController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PostCell", for: indexPath) as! PostCell
-        let post = posts[indexPath.item]
+        var post = posts[indexPath.item]
         cell.configure(image: post.image ?? "", title: post.title ?? "", date: post.date ?? "")
+        
+        
+        let favoriteImage = post.isFavorite ? UIImage(systemName: "heart.fill") : UIImage(systemName: "heart")
+        cell.favoriteButton.setImage(favoriteImage, for: .normal)
+        
+        
+        cell.favoriteButtonAction = { [weak self] in
+            guard let self = self else { return }
+            self.toggleFavorite(for: &post)
+            collectionView.reloadData()
+        }
+        
         return cell
     }
+    
+    private func toggleFavorite(for post: inout Post) {
+        post.isFavorite.toggle() // Favori durumu toggle et
+        
+        // JSON dosyasında güncelleme yapılabilir (opsiyonel)
+        postManager.updatePost(post) // PostManager'da updatePost metodunu çağırarak güncelleme yapılabilir
+    }
+    
 }
 
 extension SearchController: UICollectionViewDelegate {
@@ -83,7 +81,9 @@ extension SearchController: UICollectionViewDelegateFlowLayout {
         
         // HeaderView-daki clsoure-i define et
         header.onCategorySelected = { [weak self] category in
-            self?.filterPosts(by: category.name ?? "")
+            guard let self = self else { return }
+            self.posts = self.postManager.filterPosts(by: category.name ?? "")
+            self.searchCollectionView.reloadData()
         }
         
         return header

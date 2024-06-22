@@ -21,6 +21,11 @@ class LoginController: UIViewController {
         errorLabel.isHidden = true
     }
     
+    @IBAction func skipTappedButton(_ sender: Any) {
+        if let sceneDelegate = self.view.window?.windowScene?.delegate as? SceneDelegate {
+            sceneDelegate.setTabBarAsRoot()
+        }
+    }
     @IBAction func signInTappedButton(_ sender: Any) {
         
         let email = emailField.text ?? ""

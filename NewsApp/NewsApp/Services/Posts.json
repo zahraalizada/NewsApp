@@ -1,6 +1,6 @@
 [
     {
-        "categoryName": "Tecnology",
+        "categoryName": "Technology",
         "title": "Technology Advances in 2024",
         "content": "The year 2024 has seen significant advancements in the field of technology. From AI breakthroughs to new gadgets, the tech world is buzzing with excitement.",
         "image": "post1",
@@ -24,6 +24,6 @@
         "image": "post3",
         "date": "2024-06-18",
         "author": "Emily Johnson",
-        "isFavorite": false
+        "isFavorite": true
     }
 ]

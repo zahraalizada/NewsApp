@@ -14,11 +14,14 @@ class PostCell: UICollectionViewCell {
     @IBOutlet weak private var titleLabel: UILabel!
     @IBOutlet weak private var dateLabel: UILabel!
     
+    var favoriteButtonAction: (() -> Void)?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
     
     @IBAction func favoriteTappedButon(_ sender: Any) {
+        favoriteButtonAction?() 
     }
     
     func configure(image: String, title: String, date: String) {

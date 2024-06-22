@@ -45,7 +45,6 @@ extension HeaderView: UICollectionViewDelegate {
         let selectedCategory = viewModel.items[indexPath.item]
         onCategorySelected?(selectedCategory)  // Closure-i call et
     }
-    
 }
 
 extension HeaderView: UICollectionViewDelegateFlowLayout {

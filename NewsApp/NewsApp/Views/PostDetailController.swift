@@ -11,7 +11,7 @@ class PostDetailController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        title = "Post Detail"
         
     }
     
