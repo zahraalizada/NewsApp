@@ -16,7 +16,6 @@ class FavoriteController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Favorite"
         
         table.register(UINib(nibName: "FavoriteCell", bundle: nil), forCellReuseIdentifier: "FavoriteCell")
         
@@ -36,15 +35,19 @@ extension FavoriteController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FavoriteCell") as! FavoriteCell
         let post = favoritePosts[indexPath.row]
-        cell.textLabel?.text = post.title
-        //        cell.configure(image: post.image ?? "", title: post.title ?? "", date: post.date ?? "")
+        cell.configure(title: post.title ?? "", image: post.image ?? "", date: post.date ?? "")
         return cell
     }
 }
 
 extension FavoriteController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let controller = storyboard?.instantiateViewController(identifier: "PostDetailController") as! PostDetailController
+        navigationController?.show(controller, sender: nil)
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
+        return 100
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {

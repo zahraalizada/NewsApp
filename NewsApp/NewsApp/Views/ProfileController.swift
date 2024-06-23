@@ -17,8 +17,6 @@ class ProfileController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Profile"
-        
         addLogoutBtn()
         getUserDetails()
     }
