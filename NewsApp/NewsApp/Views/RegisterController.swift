@@ -18,9 +18,11 @@ class RegisterController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Register"
+        setViewDidLoad()
+    }
+    
+    func setViewDidLoad() {
         errorLabel.isHidden = true
-        
         fullnameField.delegate = self
         emailField.delegate = self
         passwordField.delegate = self

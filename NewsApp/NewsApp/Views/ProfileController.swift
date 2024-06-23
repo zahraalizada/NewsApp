@@ -8,7 +8,7 @@
 import UIKit
 
 class ProfileController: UIViewController {
-
+    
     @IBOutlet weak var fullnameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var passwordLabel: UILabel!
