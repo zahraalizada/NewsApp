@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RegisterController: UIViewController {
+class RegisterController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var fullnameField: UITextField!
     @IBOutlet weak var emailField: UITextField!
@@ -20,6 +20,19 @@ class RegisterController: UIViewController {
         super.viewDidLoad()
         title = "Register"
         errorLabel.isHidden = true
+        
+        fullnameField.delegate = self
+        emailField.delegate = self
+        passwordField.delegate = self
+        registerVM.setAllTextFieldsUi(fullnameField: fullnameField, emailField: emailField, passwordField: passwordField)
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        textField.layer.borderColor = UIColor(red: 210.0 / 255.0, green: 90.0 / 255.0, blue: 60.0 / 255.0, alpha: 1.0).cgColor
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        textField.layer.borderColor = UIColor(red: 75.0 / 255.0, green: 45.0 / 255.0, blue: 35.0 / 255.0, alpha: 1.0).cgColor
     }
     
     @IBAction func signupTappedButton(_ sender: Any) {

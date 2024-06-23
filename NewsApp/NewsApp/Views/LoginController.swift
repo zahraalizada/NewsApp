@@ -7,11 +7,12 @@
 
 import UIKit
 
-class LoginController: UIViewController {
+class LoginController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var errorLabel: UILabel!
+    @IBOutlet weak var loginButton: UIButton!
     
     var loginVM = LoginViewModel()
     var registerVM = RegisterViewModel()
@@ -19,6 +20,22 @@ class LoginController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         errorLabel.isHidden = true
+        
+        loginButton.layer.cornerRadius = 0
+        loginButton.layer.masksToBounds = true
+        
+        emailField.delegate = self
+        passwordField.delegate = self
+        loginVM.setAllTextFieldsUi(emailField: emailField, passwordField: passwordField)
+        
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        textField.layer.borderColor = UIColor(red: 210.0 / 255.0, green: 90.0 / 255.0, blue: 60.0 / 255.0, alpha: 1.0).cgColor
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        textField.layer.borderColor = UIColor(red: 75.0 / 255.0, green: 45.0 / 255.0, blue: 35.0 / 255.0, alpha: 1.0).cgColor
     }
     
     @IBAction func skipTappedButton(_ sender: Any) {
@@ -26,6 +43,7 @@ class LoginController: UIViewController {
             sceneDelegate.setTabBarAsRoot()
         }
     }
+    
     @IBAction func signInTappedButton(_ sender: Any) {
         
         let email = emailField.text ?? ""
@@ -37,7 +55,6 @@ class LoginController: UIViewController {
             errorLabel.isHidden = false
         } else {
             if loginVM.manager.isValidEmail(email: emailField.text ?? ""){
-                
                 loginVM.manager.getUsers { users in
                     if users.contains(where:  {$0.email == email && $0.password == password}) {
                         UserDefaults.standard.setValue(email, forKey: "email")

@@ -13,6 +13,9 @@ class PostCell: UICollectionViewCell {
     @IBOutlet weak private var postImage: UIImageView!
     @IBOutlet weak private var titleLabel: UILabel!
     @IBOutlet weak private var dateLabel: UILabel!
+    @IBOutlet weak var contentLabel: UILabel!
+    
+    @IBOutlet weak var borderView: UIView!
     
     var favoriteButtonAction: (() -> Void)?
     
@@ -24,10 +27,11 @@ class PostCell: UICollectionViewCell {
         favoriteButtonAction?() 
     }
     
-    func configure(image: String, title: String, date: String) {
+    func configure(image: String, title: String, date: String, content: String) {
         postImage.image = UIImage(named: image)
         titleLabel.text = title
         dateLabel.text = date
+        contentLabel.text = content
     }
 
 }
