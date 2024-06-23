@@ -18,13 +18,15 @@ class HeaderViewModel {
     func saveItemsIfNeeded() {
         let savedItems = fetchItems()
         if savedItems.isEmpty {
-            saveItem(text: "News")
-            saveItem(text: "Animal")
-            saveItem(text: "Geography")
-            saveItem(text: "Football")
-            saveItem(text: "Volleyball")
-            saveItem(text: "Basketball")
+            saveItem(text: "Politics")
+            saveItem(text: "Business")
             saveItem(text: "Technology")
+            saveItem(text: "Entertainment")
+            saveItem(text: "Sports")
+            saveItem(text: "Health")
+            saveItem(text: "Science")
+            saveItem(text: "Education")
+            saveItem(text: "Travel")
         }
     }
     

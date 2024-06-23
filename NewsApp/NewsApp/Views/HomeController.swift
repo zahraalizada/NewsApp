@@ -33,7 +33,6 @@ class HomeController: UIViewController {
         bottomCollectionView.reloadData()
         
         homeVM.setCollectionViewBorder(for: topCollectionView)
-//        homeVM.setCollectionViewBorder(for: bottomCollectionView)
     }
     
     @IBAction func allNewsTappedButton(_ sender: Any) {
@@ -80,12 +79,25 @@ extension HomeController: UICollectionViewDataSource {
 }
 
 extension HomeController: UICollectionViewDelegate {
+ 
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let headerView = bottomCollectionView.supplementaryView(forElementKind: UICollectionView.elementKindSectionHeader, at: IndexPath(row: 0, section: 0)) as? HeaderView {
             headerView.selectedCategoryIndex = indexPath.item
             selectedCategoryIndex = indexPath.item
             bottomCollectionView.reloadData()
         }
+        
+        if collectionView == topCollectionView {
+            let controller = storyboard?.instantiateViewController(identifier: "\(PostDetailController.self)") as! PostDetailController
+            controller.post = homeVM.posts[indexPath.row]
+            navigationController?.show(controller, sender: nil)
+        } else if collectionView == bottomCollectionView {
+            let controller = storyboard?.instantiateViewController(identifier: "\(PostDetailController.self)") as! PostDetailController
+            controller.post = homeVM.posts[indexPath.row]
+            navigationController?.show(controller, sender: nil)
+        }
+        
     }
 }
 

@@ -43,6 +43,7 @@ extension FavoriteController: UITableViewDataSource {
 extension FavoriteController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let controller = storyboard?.instantiateViewController(identifier: "PostDetailController") as! PostDetailController
+        controller.post = favoritePosts[indexPath.row]
         navigationController?.show(controller, sender: nil)
     }
     

@@ -36,6 +36,7 @@
 		1AB7298B2C144FF70059BE82 /* SliderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB729882C144FF70059BE82 /* SliderCell.swift */; };
 		1AB7298E2C14502F0059BE82 /* PostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AB7298D2C14502F0059BE82 /* PostCell.xib */; };
 		1AB7298F2C14502F0059BE82 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB7298C2C14502F0059BE82 /* PostCell.swift */; };
+		1AC6980F2C28BD5700F65B52 /* PostDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC6980E2C28BD5700F65B52 /* PostDetailCell.swift */; };
 		1ACA12BD2C22C30A000262B3 /* PostManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA12BC2C22C30A000262B3 /* PostManager.swift */; };
 		1AF3A3962C21B02D00B9A5E9 /* Posts.json in Resources */ = {isa = PBXBuildFile; fileRef = 1AF3A3952C21B02D00B9A5E9 /* Posts.json */; };
 		1AF3A3992C21B87F00B9A5E9 /* CategoryCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3A3972C21B87F00B9A5E9 /* CategoryCoreData.xcdatamodeld */; };
@@ -82,6 +83,7 @@
 		1AB729892C144FF70059BE82 /* SliderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SliderCell.xib; sourceTree = "<group>"; };
 		1AB7298C2C14502F0059BE82 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		1AB7298D2C14502F0059BE82 /* PostCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostCell.xib; sourceTree = "<group>"; };
+		1AC6980E2C28BD5700F65B52 /* PostDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailCell.swift; sourceTree = "<group>"; };
 		1ACA12BC2C22C30A000262B3 /* PostManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostManager.swift; sourceTree = "<group>"; };
 		1AF3A3952C21B02D00B9A5E9 /* Posts.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Posts.json; sourceTree = "<group>"; };
 		1AF3A3982C21B87F00B9A5E9 /* CategoryCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CategoryCoreData.xcdatamodel; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 				1AF3A3B32C21F66500B9A5E9 /* CategoryCell.xib */,
 				1A16FAAE2C26BED400CC8AB9 /* FavoriteCell.swift */,
 				1A16FAAF2C26BED400CC8AB9 /* FavoriteCell.xib */,
+				1AC6980E2C28BD5700F65B52 /* PostDetailCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 				1AF3A3A22C21D1A900B9A5E9 /* CategoryList+CoreDataClass.swift in Sources */,
 				1AF3A3A32C21D1A900B9A5E9 /* CategoryList+CoreDataProperties.swift in Sources */,
 				1A31E8132C0B18DD00712199 /* LoginViewModel.swift in Sources */,
+				1AC6980F2C28BD5700F65B52 /* PostDetailCell.swift in Sources */,
 				1AB7298F2C14502F0059BE82 /* PostCell.swift in Sources */,
 				1AF3A3992C21B87F00B9A5E9 /* CategoryCoreData.xcdatamodeld in Sources */,
 				1A31E80F2C0B17FA00712199 /* ProfileController.swift in Sources */,

@@ -70,7 +70,11 @@ extension SearchController: UICollectionViewDataSource {
 }
 
 extension SearchController: UICollectionViewDelegate {
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let controller = storyboard?.instantiateViewController(identifier: "\(PostDetailController.self)") as! PostDetailController
+        controller.post = posts[indexPath.row]
+        navigationController?.show(controller, sender: nil)
+    }
 }
 
 extension SearchController: UICollectionViewDelegateFlowLayout {
