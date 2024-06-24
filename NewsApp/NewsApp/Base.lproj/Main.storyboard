@@ -49,13 +49,15 @@
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ze-72-QmL">
                                         <rect key="frame" x="0.0" y="168" width="353" height="48"/>
+                                        <color key="backgroundColor" red="0.82745098039999998" green="0.36862745099999999" blue="0.2274509804" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="48" id="us3-zQ-JTu"/>
                                         </constraints>
+                                        <color key="tintColor" red="0.82745098039999998" green="0.36862745099999999" blue="0.2274509804" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Login">
                                             <fontDescription key="titleFontDescription" name="HiraMinProN-W6" family="Hiragino Mincho ProN" pointSize="17"/>
-                                            <color key="baseBackgroundColor" red="0.86274509803921573" green="0.47058823529411764" blue="0.3529411764705882" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <color key="baseBackgroundColor" red="0.82745098039999998" green="0.36862745099999999" blue="0.2274509804" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </buttonConfiguration>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -119,7 +121,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1924.4274809160304" y="-27.464788732394368"/>
+            <point key="canvasLocation" x="2666" y="-27"/>
         </scene>
         <!--Register Controller-->
         <scene sceneID="5yo-1x-88i">
@@ -169,13 +171,15 @@
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nTg-sK-rkh">
                                         <rect key="frame" x="0.0" y="236" width="353" height="48"/>
+                                        <color key="backgroundColor" red="0.82745098039999998" green="0.36862745099999999" blue="0.2274509804" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="48" id="XVP-tr-Caa"/>
                                         </constraints>
+                                        <color key="tintColor" red="0.82745098039999998" green="0.36862745099999999" blue="0.2274509804" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Register">
                                             <fontDescription key="titleFontDescription" name="HiraMinProN-W6" family="Hiragino Mincho ProN" pointSize="17"/>
-                                            <color key="baseBackgroundColor" red="0.86274509799999999" green="0.47058823529999999" blue="0.35294117650000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <color key="baseBackgroundColor" red="0.82745098039999998" green="0.36862745099999999" blue="0.2274509804" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="signupTappedButton:" destination="L1s-ZJ-hvZ" eventType="touchUpInside" id="774-fd-A64"/>
@@ -195,6 +199,7 @@
                             <constraint firstItem="3iS-Mt-glH" firstAttribute="trailing" secondItem="igI-sT-SFe" secondAttribute="trailing" constant="20" id="eSh-QI-PO9"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="iye-g2-J1Q"/>
                     <connections>
                         <outlet property="emailField" destination="Vog-Bn-Ops" id="dha-Ci-Fa0"/>
                         <outlet property="errorLabel" destination="OrK-88-4zU" id="g7T-yV-ZVY"/>
@@ -204,7 +209,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w7e-t4-grb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2770.2290076335876" y="-27.464788732394368"/>
+            <point key="canvasLocation" x="3468" y="-27"/>
         </scene>
         <!--Home Controller-->
         <scene sceneID="3Xk-Z8-pBi">
@@ -221,20 +226,20 @@
                                 </constraints>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wpA-rz-jLh">
-                                <rect key="frame" x="20" y="159" width="353" height="240"/>
+                                <rect key="frame" x="20" y="159" width="353" height="270"/>
                                 <color key="backgroundColor" red="0.90980392160000001" green="0.82352941180000006" blue="0.74901960779999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="240" id="90W-6D-W8Y"/>
+                                    <constraint firstAttribute="height" constant="270" id="90W-6D-W8Y"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="10" id="jia-ED-gKD">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="JRg-ss-bNi">
-                                        <rect key="frame" x="10" y="56" width="128" height="128"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="xlt-GI-fgT">
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
@@ -248,7 +253,7 @@
                                 </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jkx-G4-JaJ">
-                                <rect key="frame" x="20" y="419" width="353" height="36"/>
+                                <rect key="frame" x="20" y="449" width="353" height="36"/>
                                 <color key="tintColor" red="0.82745098039999998" green="0.36862745099999999" blue="0.2274509804" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="All News">
@@ -259,7 +264,7 @@
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ZwF-3K-rz2">
-                                <rect key="frame" x="20" y="463" width="353" height="294"/>
+                                <rect key="frame" x="20" y="493" width="353" height="264"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="lB8-fY-13C">
                                     <size key="itemSize" width="128" height="128"/>
@@ -337,13 +342,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8AS-m6-eHk">
-                                                    <rect key="frame" x="0.0" y="42" width="377" height="22"/>
+                                                    <rect key="frame" x="32" y="42" width="313" height="22"/>
                                                     <fontDescription key="fontDescription" name="HiraMinProN-W6" family="Hiragino Mincho ProN" pointSize="22"/>
                                                     <color key="textColor" red="0.29411764709999999" green="0.1764705882" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rbl-Ag-wsB">
-                                                    <rect key="frame" x="0.0" y="86" width="377" height="160"/>
+                                                    <rect key="frame" x="32" y="86" width="313" height="160"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="160" id="ovH-kk-atB"/>
                                                     </constraints>
@@ -381,8 +386,8 @@
                                                 <constraint firstItem="rbl-Ag-wsB" firstAttribute="leading" secondItem="8AS-m6-eHk" secondAttribute="leading" id="Pnh-Xg-fGI"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="EUE-zs-A33" secondAttribute="trailing" id="RP8-Xy-62u"/>
                                                 <constraint firstItem="EUE-zs-A33" firstAttribute="leading" secondItem="0y3-gT-wVD" secondAttribute="leadingMargin" id="VCF-LQ-MRj"/>
-                                                <constraint firstAttribute="trailing" secondItem="8AS-m6-eHk" secondAttribute="trailing" id="WFd-iQ-b9p"/>
-                                                <constraint firstItem="8AS-m6-eHk" firstAttribute="leading" secondItem="0y3-gT-wVD" secondAttribute="leading" id="g8J-Kj-hOz"/>
+                                                <constraint firstAttribute="trailing" secondItem="8AS-m6-eHk" secondAttribute="trailing" constant="32" id="WFd-iQ-b9p"/>
+                                                <constraint firstItem="8AS-m6-eHk" firstAttribute="leading" secondItem="0y3-gT-wVD" secondAttribute="leading" constant="32" id="g8J-Kj-hOz"/>
                                                 <constraint firstItem="rbl-Ag-wsB" firstAttribute="top" secondItem="8AS-m6-eHk" secondAttribute="bottom" constant="22" id="nBF-BI-qO4"/>
                                                 <constraint firstItem="DTy-hK-9Cm" firstAttribute="top" secondItem="rbl-Ag-wsB" secondAttribute="bottom" constant="16" id="vjG-fs-SsR"/>
                                                 <constraint firstItem="rbl-Ag-wsB" firstAttribute="trailing" secondItem="8AS-m6-eHk" secondAttribute="trailing" id="xgZ-fe-4QE"/>
@@ -419,7 +424,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CHp-qT-4Ir" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2590" y="2403"/>
+            <point key="canvasLocation" x="2514" y="2403"/>
         </scene>
         <!--Search Controller-->
         <scene sceneID="l5c-YW-uTV">
@@ -645,10 +650,44 @@
             </objects>
             <point key="canvasLocation" x="5053" y="1681"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--New Controller-->
+        <scene sceneID="3ON-zv-YTI">
+            <objects>
+                <viewController storyboardIdentifier="NewController" id="hhy-t8-Irc" customClass="NewController" customModule="NewsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fjV-KJ-RIz">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rNN-Zj-wad">
+                                <rect key="frame" x="139.33333333333334" y="404" width="114.66666666666666" height="44"/>
+                                <color key="backgroundColor" red="0.82745098039999998" green="0.36862745099999999" blue="0.2274509804" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="4lX-id-Tki"/>
+                                </constraints>
+                                <color key="tintColor" red="0.82745098039999998" green="0.36862745099999999" blue="0.2274509804" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Go To Login"/>
+                                <connections>
+                                    <action selector="goToLoginTapped:" destination="hhy-t8-Irc" eventType="touchUpInside" id="mdA-pR-j9c"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="rZY-iW-I2S"/>
+                        <color key="backgroundColor" red="0.90980392160000001" green="0.82352941180000006" blue="0.74901960779999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="rNN-Zj-wad" firstAttribute="centerY" secondItem="fjV-KJ-RIz" secondAttribute="centerY" id="cxK-c5-33I"/>
+                            <constraint firstItem="rNN-Zj-wad" firstAttribute="centerX" secondItem="fjV-KJ-RIz" secondAttribute="centerX" id="vwS-SU-c4e"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CAp-l0-Zmw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5103" y="2403"/>
+        </scene>
+        <!--Main Tab Bar Controller-->
         <scene sceneID="nxT-vs-3EU">
             <objects>
-                <tabBarController storyboardIdentifier="tabBarNavigation" id="qFD-jn-F1o" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabBarNavigation" id="qFD-jn-F1o" customClass="MainTabBarController" customModule="NewsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gge-CU-vrf">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -664,7 +703,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZJM-ub-qBC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3889.3129770992364" y="-27.464788732394368"/>
+            <point key="canvasLocation" x="4816.0305343511445" y="-27.464788732394368"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Hjb-x2-aoI">
@@ -764,7 +803,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qOY-uj-yrz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="997.70992366412213" y="-27.464788732394368"/>
+            <point key="canvasLocation" x="1740" y="-27"/>
         </scene>
     </scenes>
     <resources>

@@ -60,6 +60,7 @@ extension HeaderView: UICollectionViewDelegate {
 
 extension HeaderView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: collectionView.frame.width/2.7 - 20, height: 40)
+        CGSize(width: collectionView.frame.width/2.2 - 20, height: 40)
     }
 }
+

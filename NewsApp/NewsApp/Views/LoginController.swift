@@ -58,6 +58,7 @@ class LoginController: UIViewController, UITextFieldDelegate {
                 loginVM.manager.getUsers { users in
                     if users.contains(where:  {$0.email == email && $0.password == password}) {
                         UserDefaults.standard.setValue(email, forKey: "email")
+                        UserDefaults.standard.setValue(true, forKey: "userRegistered")
                         DispatchQueue.main.async {
                             if let sceneDelegate = self.view.window?.windowScene?.delegate as? SceneDelegate {
                                 sceneDelegate.setTabBarAsRoot()

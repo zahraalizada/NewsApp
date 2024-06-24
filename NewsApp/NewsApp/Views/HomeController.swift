@@ -90,7 +90,7 @@ extension HomeController: UICollectionViewDelegate {
         
         if collectionView == topCollectionView {
             let controller = storyboard?.instantiateViewController(identifier: "\(PostDetailController.self)") as! PostDetailController
-            controller.post = homeVM.posts[indexPath.row]
+            controller.post = homeVM.sliderPosts[indexPath.row]
             navigationController?.show(controller, sender: nil)
         } else if collectionView == bottomCollectionView {
             let controller = storyboard?.instantiateViewController(identifier: "\(PostDetailController.self)") as! PostDetailController
@@ -104,7 +104,7 @@ extension HomeController: UICollectionViewDelegate {
 extension HomeController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == topCollectionView {
-            return CGSize(width: collectionView.frame.width - 20, height: 240)
+            return CGSize(width: collectionView.frame.width - 16, height: 250)
         } else if collectionView == bottomCollectionView {
             return CGSize(width: collectionView.frame.width - 20, height: 300)
         }
@@ -128,14 +128,13 @@ extension HomeController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        if collectionView == topCollectionView {
+            return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        } else {
+            return UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
+        }
+        
+       
     }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 10
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 10
-    }
+  
 }

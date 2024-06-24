@@ -27,16 +27,21 @@ class SearchController: UIViewController {
     }
     
     @IBAction func searchFieldTapped(_ sender: Any) {
+        
         posts = postManager.filterPostsWithSearch(text: searchField.text ?? "")
         searchCollectionView.reloadData()
+        
+        if let headerView = searchCollectionView.supplementaryView(forElementKind: UICollectionView.elementKindSectionHeader, at: IndexPath(row: 0, section: 0)) as? HeaderView {
+            headerView.resetSelection()
+        }
     }
     
     private func setupSearchStackView() {
-          searchStackView.layer.borderColor = UIColor(red: 75.0 / 255.0, green: 45.0 / 255.0, blue: 35.0 / 255.0, alpha: 1.0).cgColor
-          searchStackView.layer.borderWidth = 1.0
-          searchStackView.isLayoutMarginsRelativeArrangement = true
-          searchStackView.layoutMargins = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
-      }
+        searchStackView.layer.borderColor = UIColor(red: 75.0 / 255.0, green: 45.0 / 255.0, blue: 35.0 / 255.0, alpha: 1.0).cgColor
+        searchStackView.layer.borderWidth = 1.0
+        searchStackView.isLayoutMarginsRelativeArrangement = true
+        searchStackView.layoutMargins = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+    }
 }
 
 extension SearchController: UICollectionViewDataSource {
@@ -53,7 +58,6 @@ extension SearchController: UICollectionViewDataSource {
         let favoriteImage = post.isFavorite ? UIImage(systemName: "heart.fill") : UIImage(systemName: "heart")
         cell.favoriteButton.setImage(favoriteImage, for: .normal)
         
-        
         cell.favoriteButtonAction = { [weak self] in
             guard let self = self else { return }
             self.toggleFavorite(for: &post)
@@ -66,7 +70,6 @@ extension SearchController: UICollectionViewDataSource {
         post.isFavorite.toggle()
         postManager.updatePost(post)
     }
-    
 }
 
 extension SearchController: UICollectionViewDelegate {

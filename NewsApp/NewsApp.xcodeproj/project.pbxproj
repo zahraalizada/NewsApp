@@ -36,6 +36,8 @@
 		1AB7298B2C144FF70059BE82 /* SliderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB729882C144FF70059BE82 /* SliderCell.swift */; };
 		1AB7298E2C14502F0059BE82 /* PostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AB7298D2C14502F0059BE82 /* PostCell.xib */; };
 		1AB7298F2C14502F0059BE82 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB7298C2C14502F0059BE82 /* PostCell.swift */; };
+		1ABD12932C29883600B3474F /* NewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABD12922C29883600B3474F /* NewController.swift */; };
+		1ABD12952C29888A00B3474F /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABD12942C29888A00B3474F /* MainTabBarController.swift */; };
 		1AC6980F2C28BD5700F65B52 /* PostDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC6980E2C28BD5700F65B52 /* PostDetailCell.swift */; };
 		1ACA12BD2C22C30A000262B3 /* PostManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA12BC2C22C30A000262B3 /* PostManager.swift */; };
 		1AF3A3962C21B02D00B9A5E9 /* Posts.json in Resources */ = {isa = PBXBuildFile; fileRef = 1AF3A3952C21B02D00B9A5E9 /* Posts.json */; };
@@ -83,6 +85,8 @@
 		1AB729892C144FF70059BE82 /* SliderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SliderCell.xib; sourceTree = "<group>"; };
 		1AB7298C2C14502F0059BE82 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		1AB7298D2C14502F0059BE82 /* PostCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostCell.xib; sourceTree = "<group>"; };
+		1ABD12922C29883600B3474F /* NewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewController.swift; sourceTree = "<group>"; };
+		1ABD12942C29888A00B3474F /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		1AC6980E2C28BD5700F65B52 /* PostDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailCell.swift; sourceTree = "<group>"; };
 		1ACA12BC2C22C30A000262B3 /* PostManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostManager.swift; sourceTree = "<group>"; };
 		1AF3A3952C21B02D00B9A5E9 /* Posts.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Posts.json; sourceTree = "<group>"; };
@@ -175,6 +179,7 @@
 				1A31E80E2C0B17FA00712199 /* ProfileController.swift */,
 				1A31E8102C0B180A00712199 /* PostDetailController.swift */,
 				1AF3A3AA2C21ECCE00B9A5E9 /* SearchController.swift */,
+				1ABD12922C29883600B3474F /* NewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -186,6 +191,7 @@
 				1AF3A3952C21B02D00B9A5E9 /* Posts.json */,
 				1AF3A39E2C21BACF00B9A5E9 /* CategoryManager.swift */,
 				1ACA12BC2C22C30A000262B3 /* PostManager.swift */,
+				1ABD12942C29888A00B3474F /* MainTabBarController.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -317,6 +323,7 @@
 				1A31E81F2C0B191400712199 /* PostDetailViewModel.swift in Sources */,
 				1A31E81D2C0B190B00712199 /* ProfileViewModel.swift in Sources */,
 				1A31E8222C0B1BBC00712199 /* Category.swift in Sources */,
+				1ABD12952C29888A00B3474F /* MainTabBarController.swift in Sources */,
 				1AF3A3B42C21F66500B9A5E9 /* CategoryCell.swift in Sources */,
 				1ACA12BD2C22C30A000262B3 /* PostManager.swift in Sources */,
 				1A372A832C24C0B000B82C26 /* HeaderViewModel.swift in Sources */,
@@ -330,6 +337,7 @@
 				1A31E8132C0B18DD00712199 /* LoginViewModel.swift in Sources */,
 				1AC6980F2C28BD5700F65B52 /* PostDetailCell.swift in Sources */,
 				1AB7298F2C14502F0059BE82 /* PostCell.swift in Sources */,
+				1ABD12932C29883600B3474F /* NewController.swift in Sources */,
 				1AF3A3992C21B87F00B9A5E9 /* CategoryCoreData.xcdatamodeld in Sources */,
 				1A31E80F2C0B17FA00712199 /* ProfileController.swift in Sources */,
 				1AF3A3AE2C21F0F600B9A5E9 /* HeaderView.swift in Sources */,

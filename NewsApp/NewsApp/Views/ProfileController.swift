@@ -41,6 +41,7 @@ class ProfileController: UIViewController {
     }
     
     @IBAction func logoutTappedButton(_ sender: Any) {
+        UserDefaults.standard.set(false, forKey: "userRegistered")
         let scene = UIApplication.shared.connectedScenes.first
         if let sceneDelegate: SceneDelegate = scene?.delegate as? SceneDelegate {
             sceneDelegate.setLoginAsRoot()
