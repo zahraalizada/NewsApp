@@ -63,4 +63,3 @@ extension HeaderView: UICollectionViewDelegateFlowLayout {
         CGSize(width: collectionView.frame.width/2.2 - 20, height: 40)
     }
 }
-

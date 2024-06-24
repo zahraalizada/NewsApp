@@ -8,10 +8,8 @@
 import UIKit
 
 class SliderCell: UICollectionViewCell {
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
-
 }

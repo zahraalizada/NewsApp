@@ -41,7 +41,7 @@ class RegisterController: UIViewController, UITextFieldDelegate {
         guard let fullname = fullnameField.text, !fullname.isEmpty,
               let email = emailField.text, !email.isEmpty,
               let password = passwordField.text, !password.isEmpty else {
-            errorLabel.text = "Zəhmət olmasa bütün boş xanaları doldurun."
+            errorLabel.text = "Please fill in all empty fields."
             errorLabel.isHidden = false
             return
         }
@@ -62,7 +62,7 @@ class RegisterController: UIViewController, UITextFieldDelegate {
                 }
             }
         } else {
-            errorLabel.text = "Zəhmət olmasa düzgün email daxil edin."
+            errorLabel.text = "The email format you entered is incorrect."
             errorLabel.isHidden = false
         }
     }

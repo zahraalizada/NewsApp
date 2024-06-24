@@ -31,5 +31,4 @@ class LoginViewModel {
         let placeholderColor = UIColor.gray
         textField.attributedPlaceholder = NSAttributedString(string: placeholder, attributes: [NSAttributedString.Key.foregroundColor: placeholderColor])
     }
-    
 }

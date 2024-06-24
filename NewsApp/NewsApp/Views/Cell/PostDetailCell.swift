@@ -8,7 +8,7 @@
 import UIKit
 
 class PostDetailCell: UITableViewCell {
-
+    
     @IBOutlet weak private var titleLabel: UILabel!
     @IBOutlet weak private var postImage: UIImageView!
     @IBOutlet weak private var dateLabel: UILabel!
@@ -17,10 +17,8 @@ class PostDetailCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }

@@ -51,7 +51,7 @@ class LoginController: UIViewController, UITextFieldDelegate {
         
         if emailField.text == "",
            passwordField.text == "" {
-            errorLabel.text = "Zəhmət olmasa bütün boş xanaları doldurun."
+            errorLabel.text = "Please fill in all empty fields."
             errorLabel.isHidden = false
         } else {
             if loginVM.manager.isValidEmail(email: emailField.text ?? ""){
@@ -67,14 +67,14 @@ class LoginController: UIViewController, UITextFieldDelegate {
                     } else {
                         DispatchQueue.main.async {
                             self.errorLabel.isHidden = false
-                            self.errorLabel.text = "Daxil etdiyiniz e-mail və ya şifrə yanlışdır."
+                            self.errorLabel.text = "The email or password you entered is incorrect."
                         }
                     }
                 }
             } else {
                 DispatchQueue.main.async {
                     self.errorLabel.isHidden = false
-                    self.errorLabel.text = "Daxil etdiyiniz e-mail formatı yanlışdır."
+                    self.errorLabel.text = "The email format you entered is incorrect."
                 }
             }
         }

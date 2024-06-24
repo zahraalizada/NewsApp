@@ -7,12 +7,12 @@
 import UIKit
 
 class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.delegate = self
     }
-
+    
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
         if let viewControllers = tabBarController.viewControllers,
            let index = viewControllers.firstIndex(of: viewController) {
@@ -25,7 +25,6 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
                     }
                 }
             }
-           
         }
         return true
     }

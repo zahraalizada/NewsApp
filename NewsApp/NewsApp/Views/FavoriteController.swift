@@ -18,25 +18,18 @@ class FavoriteController: UIViewController {
         super.viewDidLoad()
         
         table.register(UINib(nibName: "FavoriteCell", bundle: nil), forCellReuseIdentifier: "FavoriteCell")
-        
         favoritePosts = postManager.filterFavoritePosts()
         table.reloadData()
-        
         NotificationCenter.default.addObserver(self, selector: #selector(handleFavoriteStatusChanged), name: NSNotification.Name("FavoriteStatusChanged"), object: nil)
-        
     }
     
     @objc func handleFavoriteStatusChanged(notification: NSNotification) {
         favoritePosts = postManager.filterFavoritePosts()
         table.reloadData()
     }
-    
     deinit {
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name("FavoriteStatusChanged"), object: nil)
-        
     }
-    
-    
 }
 
 
@@ -79,5 +72,3 @@ extension FavoriteController: UITableViewDelegate {
         NotificationCenter.default.post(name: NSNotification.Name("FavoriteStatusChanged"), object: nil)
     }
 }
-
-

@@ -82,8 +82,6 @@ extension HomeController: UICollectionViewDataSource {
 }
 
 extension HomeController: UICollectionViewDelegate {
- 
-    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let headerView = bottomCollectionView.supplementaryView(forElementKind: UICollectionView.elementKindSectionHeader, at: IndexPath(row: 0, section: 0)) as? HeaderView {
             headerView.selectedCategoryIndex = indexPath.item
@@ -100,7 +98,6 @@ extension HomeController: UICollectionViewDelegate {
             controller.post = homeVM.posts[indexPath.row]
             navigationController?.show(controller, sender: nil)
         }
-        
     }
 }
 
@@ -136,8 +133,5 @@ extension HomeController: UICollectionViewDelegateFlowLayout {
         } else {
             return UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
         }
-        
-       
     }
-  
 }

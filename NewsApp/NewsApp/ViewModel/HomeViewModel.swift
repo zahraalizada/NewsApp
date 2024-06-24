@@ -21,8 +21,6 @@ class HomeViewModel {
         collectionView.layer.shadowOpacity = 0.8
         collectionView.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
         collectionView.layer.shadowRadius = 4.0
-        
         collectionView.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0)
     }
-    
 }

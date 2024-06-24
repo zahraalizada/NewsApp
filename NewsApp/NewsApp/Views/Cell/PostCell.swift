@@ -8,7 +8,7 @@
 import UIKit
 
 class PostCell: UICollectionViewCell {
-
+    
     @IBOutlet weak var favoriteButton: UIButton!
     @IBOutlet weak private var postImage: UIImageView!
     @IBOutlet weak private var titleLabel: UILabel!
@@ -24,7 +24,7 @@ class PostCell: UICollectionViewCell {
     }
     
     @IBAction func favoriteTappedButon(_ sender: Any) {
-        favoriteButtonAction?() 
+        favoriteButtonAction?()
     }
     
     func configure(image: String, title: String, date: String, content: String) {
@@ -33,5 +33,4 @@ class PostCell: UICollectionViewCell {
         dateLabel.text = date
         contentLabel.text = content
     }
-
 }

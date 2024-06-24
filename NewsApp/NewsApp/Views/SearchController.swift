@@ -18,7 +18,10 @@ class SearchController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+       setupViewDidLoad()
+    }
+    
+    func setupViewDidLoad() {
         searchCollectionView.register(UINib(nibName: "PostCell", bundle: nil), forCellWithReuseIdentifier: "PostCell")
         searchCollectionView.register(UINib(nibName: "HeaderView", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "HeaderView")
         
@@ -32,16 +35,14 @@ class SearchController: UIViewController {
         if let headerView = searchCollectionView.supplementaryView(forElementKind: UICollectionView.elementKindSectionHeader, at: IndexPath(row: 0, section: 0)) as? HeaderView {
             headerView.selectedCategoryIndex = -1
         }
-        
         posts = postManager.filterPostsWithSearch(text: searchField.text ?? "")
         searchCollectionView.reloadData()
     }
     
     @objc func handleFavoriteStatusChanged(notification: NSNotification) {
-          // Verileri yeniden yükleme
-          posts = postManager.parsePostsFile()
-          searchCollectionView.reloadData()
-      }
+        posts = postManager.parsePostsFile()
+        searchCollectionView.reloadData()
+    }
     
     private func setupSearchStackView() {
         searchStackView.layer.borderColor = UIColor(red: 75.0 / 255.0, green: 45.0 / 255.0, blue: 35.0 / 255.0, alpha: 1.0).cgColor
@@ -58,9 +59,8 @@ extension SearchController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PostCell", for: indexPath) as! PostCell
-        var post = posts[indexPath.item]
+        let post = posts[indexPath.item]
         cell.configure(image: post.image ?? "", title: post.title ?? "", date: post.date ?? "", content: "")
-        
         
         let favoriteImage = post.isFavorite ? UIImage(systemName: "heart.fill") : UIImage(systemName: "heart")
         cell.favoriteButton.setImage(favoriteImage, for: .normal)
@@ -79,7 +79,6 @@ extension SearchController: UICollectionViewDataSource {
         searchCollectionView.reloadItems(at: [indexPath])
         NotificationCenter.default.post(name: NSNotification.Name("FavoriteStatusChanged"), object: nil)
     }
-
 }
 
 extension SearchController: UICollectionViewDelegate {
@@ -103,7 +102,6 @@ extension SearchController: UICollectionViewDelegateFlowLayout {
             self.posts = self.postManager.filterPosts(by: category.name ?? "")
             self.searchCollectionView.reloadData()
         }
-        
         return header
     }
 }
