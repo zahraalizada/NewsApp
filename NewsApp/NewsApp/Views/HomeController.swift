@@ -36,6 +36,9 @@ class HomeController: UIViewController {
     }
     
     @IBAction func allNewsTappedButton(_ sender: Any) {
+        if let headerView = bottomCollectionView.supplementaryView(forElementKind: UICollectionView.elementKindSectionHeader, at: IndexPath(row: 0, section: 0)) as? HeaderView {
+            headerView.selectedCategoryIndex = -1
+        }
         homeVM.posts = homeVM.allPosts
         bottomCollectionView.reloadData()
     }
@@ -104,7 +107,7 @@ extension HomeController: UICollectionViewDelegate {
 extension HomeController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == topCollectionView {
-            return CGSize(width: collectionView.frame.width - 16, height: 250)
+            return CGSize(width: collectionView.frame.width - 11, height: 250)
         } else if collectionView == bottomCollectionView {
             return CGSize(width: collectionView.frame.width - 20, height: 300)
         }

@@ -44,7 +44,7 @@ extension HeaderView: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCell", for: indexPath) as! CategoryCell
         let category = viewModel.items[indexPath.item]
         cell.configure(name: category.name ?? "")
-        cell.isSelected = indexPath.item == selectedCategoryIndex
+        cell.categoryNameLabel.textColor = indexPath.item == selectedCategoryIndex ? .white : UIColor(red: 75/255, green: 45/255, blue: 35/255, alpha: 1.0)
         cell.backgroundColor = indexPath.item == selectedCategoryIndex ? UIColor(red: 211/255, green: 94/255, blue: 58/255, alpha: 1.0) : .clear
         return cell
     }

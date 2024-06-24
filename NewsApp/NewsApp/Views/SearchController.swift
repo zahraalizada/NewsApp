@@ -24,17 +24,24 @@ class SearchController: UIViewController {
         
         posts = postManager.parsePostsFile()
         setupSearchStackView()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(handleFavoriteStatusChanged), name: NSNotification.Name("FavoriteStatusChanged"), object: nil)
     }
     
     @IBAction func searchFieldTapped(_ sender: Any) {
+        if let headerView = searchCollectionView.supplementaryView(forElementKind: UICollectionView.elementKindSectionHeader, at: IndexPath(row: 0, section: 0)) as? HeaderView {
+            headerView.selectedCategoryIndex = -1
+        }
         
         posts = postManager.filterPostsWithSearch(text: searchField.text ?? "")
         searchCollectionView.reloadData()
-        
-        if let headerView = searchCollectionView.supplementaryView(forElementKind: UICollectionView.elementKindSectionHeader, at: IndexPath(row: 0, section: 0)) as? HeaderView {
-            headerView.resetSelection()
-        }
     }
+    
+    @objc func handleFavoriteStatusChanged(notification: NSNotification) {
+          // Verileri yeniden yükleme
+          posts = postManager.parsePostsFile()
+          searchCollectionView.reloadData()
+      }
     
     private func setupSearchStackView() {
         searchStackView.layer.borderColor = UIColor(red: 75.0 / 255.0, green: 45.0 / 255.0, blue: 35.0 / 255.0, alpha: 1.0).cgColor
@@ -60,16 +67,19 @@ extension SearchController: UICollectionViewDataSource {
         
         cell.favoriteButtonAction = { [weak self] in
             guard let self = self else { return }
-            self.toggleFavorite(for: &post)
+            self.toggleFavorite(at: indexPath)
             collectionView.reloadData()
         }
         return cell
     }
     
-    private func toggleFavorite(for post: inout Post) {
-        post.isFavorite.toggle()
-        postManager.updatePost(post)
+    private func toggleFavorite(at indexPath: IndexPath) {
+        posts[indexPath.item].isFavorite.toggle()
+        postManager.updatePost(posts[indexPath.item])
+        searchCollectionView.reloadItems(at: [indexPath])
+        NotificationCenter.default.post(name: NSNotification.Name("FavoriteStatusChanged"), object: nil)
     }
+
 }
 
 extension SearchController: UICollectionViewDelegate {

@@ -9,7 +9,7 @@ import UIKit
 
 class CategoryCell: UICollectionViewCell {
     
-    @IBOutlet weak private var categoryNameLabel: UILabel!
+    @IBOutlet weak var categoryNameLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,16 +26,5 @@ class CategoryCell: UICollectionViewCell {
                    fontColor: UIColor = UIColor(red: 75/255, green: 45/255, blue: 35/255, alpha: 1.0)) {
         categoryNameLabel.text = name
         categoryNameLabel.textColor = fontColor
-    }
-    
-    override var isSelected: Bool {
-        didSet {
-            categoryNameLabel.textColor = isSelected ? .white : UIColor(red: 75/255, green: 45/255, blue: 35/255, alpha: 1.0)
-        }
-    }
-    
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        isSelected = false
     }
 }

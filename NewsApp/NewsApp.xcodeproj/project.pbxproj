@@ -30,7 +30,6 @@
 		1A31E8222C0B1BBC00712199 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A31E8212C0B1BBB00712199 /* Category.swift */; };
 		1A31E8242C0B1BC000712199 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A31E8232C0B1BC000712199 /* User.swift */; };
 		1A31E8262C0B1BCD00712199 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A31E8252C0B1BCD00712199 /* Post.swift */; };
-		1A31E8282C0B1BDA00712199 /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A31E8272C0B1BDA00712199 /* Favorite.swift */; };
 		1A372A832C24C0B000B82C26 /* HeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A372A822C24C0B000B82C26 /* HeaderViewModel.swift */; };
 		1AB7298A2C144FF70059BE82 /* SliderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AB729892C144FF70059BE82 /* SliderCell.xib */; };
 		1AB7298B2C144FF70059BE82 /* SliderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB729882C144FF70059BE82 /* SliderCell.swift */; };
@@ -79,7 +78,6 @@
 		1A31E8212C0B1BBB00712199 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		1A31E8232C0B1BC000712199 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		1A31E8252C0B1BCD00712199 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
-		1A31E8272C0B1BDA00712199 /* Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
 		1A372A822C24C0B000B82C26 /* HeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderViewModel.swift; sourceTree = "<group>"; };
 		1AB729882C144FF70059BE82 /* SliderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderCell.swift; sourceTree = "<group>"; };
 		1AB729892C144FF70059BE82 /* SliderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SliderCell.xib; sourceTree = "<group>"; };
@@ -163,7 +161,6 @@
 				1A31E8212C0B1BBB00712199 /* Category.swift */,
 				1A31E8232C0B1BC000712199 /* User.swift */,
 				1A31E8252C0B1BCD00712199 /* Post.swift */,
-				1A31E8272C0B1BDA00712199 /* Favorite.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -314,7 +311,6 @@
 				1A31E7EB2C0B109300712199 /* SceneDelegate.swift in Sources */,
 				1A31E8152C0B18E900712199 /* RegisterViewModel.swift in Sources */,
 				1AF3A3AB2C21ECCE00B9A5E9 /* SearchController.swift in Sources */,
-				1A31E8282C0B1BDA00712199 /* Favorite.swift in Sources */,
 				1A31E8192C0B18FA00712199 /* SearchViewModel.swift in Sources */,
 				1A31E81B2C0B190400712199 /* FavoriteViewModel.swift in Sources */,
 				1A31E8052C0B17A800712199 /* RegisterController.swift in Sources */,

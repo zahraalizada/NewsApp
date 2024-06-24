@@ -48,7 +48,7 @@ class RegisterController: UIViewController, UITextFieldDelegate {
         
         if registerVM.manager.isValidEmail(email: email) {
             UserDefaults.standard.setValue(true, forKey: "userRegistered")
-            
+    
             let user = User(fullname: fullname, email: email, password: password)
             
             registerVM.manager.getUsers { users in

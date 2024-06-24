@@ -11,9 +11,16 @@ import CoreData
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
+        
+        if !launchedBefore {
+            // Uygulama ilk kez başlatılıyor
+            UserDefaults.standard.set(true, forKey: "launchedBefore")
+        }
         // Override point for customization after application launch.
         return true
     }
