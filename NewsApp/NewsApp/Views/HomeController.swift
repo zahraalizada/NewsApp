@@ -104,7 +104,7 @@ extension HomeController: UICollectionViewDelegate {
 extension HomeController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == topCollectionView {
-            return CGSize(width: collectionView.frame.width - 11, height: 250)
+            return CGSize(width: collectionView.frame.width - 10, height: 250)
         } else if collectionView == bottomCollectionView {
             return CGSize(width: collectionView.frame.width - 20, height: 300)
         }
@@ -129,7 +129,7 @@ extension HomeController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         if collectionView == topCollectionView {
-            return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+            return UIEdgeInsets(top: 10, left: 5, bottom: 10, right: 5)
         } else {
             return UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
         }
