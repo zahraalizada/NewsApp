@@ -116,9 +116,14 @@ extension HomeController: UICollectionViewDelegateFlowLayout {
         switch collectionView {
         case bottomCollectionView:
             let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "HeaderView", for: indexPath) as! HeaderView
+            
             header.onCategorySelected = { [weak self] category in
                 guard let self = self else { return }
-                self.homeVM.posts = self.homeVM.postManager.filterPosts(by: category.name ?? "")
+                if let category = category {
+                    self.homeVM.posts = self.homeVM.postManager.filterPosts(by: category.name ?? "")
+                } else {
+                    self.homeVM.posts = self.homeVM.allPosts
+                }
                 self.bottomCollectionView.reloadData()
             }
             return header

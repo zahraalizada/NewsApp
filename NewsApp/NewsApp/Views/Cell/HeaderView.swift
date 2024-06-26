@@ -10,9 +10,12 @@ import UIKit
 class HeaderView: UICollectionReusableView {
     
     @IBOutlet weak var headerCollectionView: UICollectionView!
+    @IBOutlet weak var allButton: UIButton!
     
     var viewModel = HeaderViewModel()
-    var onCategorySelected: ((CategoryList) -> Void)?
+    var onCategorySelected: ((CategoryList?) -> Void)?
+    
+    let button = UIButton(type: .system)
     
     var selectedCategoryIndex: Int = -1 {
         didSet {
@@ -32,7 +35,19 @@ class HeaderView: UICollectionReusableView {
         
         viewModel.saveItemsIfNeeded()
         viewModel.items = viewModel.fetchItems()
+        
+        setupAllButtonUi()
     }
+    
+    func setupAllButtonUi() {
+           allButton.layer.borderColor = UIColor.black.cgColor
+           allButton.layer.borderWidth = 1.0
+       }
+    
+    @IBAction func allTappedButton(_ sender: Any) {
+        onCategorySelected?(nil)
+    }
+    
 }
 
 extension HeaderView: UICollectionViewDataSource {

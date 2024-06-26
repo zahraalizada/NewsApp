@@ -95,11 +95,16 @@ extension SearchController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "HeaderView", for: indexPath) as! HeaderView
         
         header.onCategorySelected = { [weak self] category in
             guard let self = self else { return }
-            self.posts = self.postManager.filterPosts(by: category.name ?? "")
+            if let category = category {
+                self.posts = self.postManager.filterPosts(by: category.name ?? "")
+            } else {
+                self.posts = self.postManager.parsePostsFile()
+            }
             self.searchCollectionView.reloadData()
         }
         return header
